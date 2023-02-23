@@ -1,0 +1,33 @@
+.friendList {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: disc;
+}
+
+.status {
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 10px;
+}
+
+.true {
+  background-color: green;
+}
+
+.false {
+  background-color: red;
+}

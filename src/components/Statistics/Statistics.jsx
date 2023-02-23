@@ -1,16 +1,16 @@
-// import css from "./Statistics.module.css";
-import PropTypes from "prop-types";
+import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
+    <section>
+      <h2 className={css.title}>{title}</h2>
 
-      <ul className="stat-list">
-        {stats.map(({ id, label, percentage}) => (
-          <li className="item" key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}%</span>
+      <ul className={css.statList}>
+        {stats.map(({ id, label, percentage }) => (
+          <li className={css.item} key={id}>
+            <span>{label}</span>
+            <span>{percentage}%</span>
           </li>
         ))}
       </ul>
@@ -19,9 +19,12 @@ export const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
-    key: PropTypes.string,
-    title: PropTypes.string,
-    label: PropTypes.string,
-    stats: PropTypes.number
-
-}
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
+};
